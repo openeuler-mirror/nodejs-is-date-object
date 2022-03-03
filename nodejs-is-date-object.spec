@@ -1,7 +1,7 @@
 %{?nodejs_find_provides_and_requires}
 Name:                nodejs-is-date-object
 Version:             1.0.1
-Release:             1
+Release:             2
 Summary:             Is this value a JS Date object?
 License:             MIT
 URL:                 https://github.com/ljharb/is-date-object
@@ -26,7 +26,7 @@ cp -pr package.json index.js %{buildroot}%{nodejs_sitelib}/is-date-object
 
 %check
 %nodejs_symlink_deps --check
-%{__nodejs} --harmony --es-staging test.js
+%{__nodejs} --harmony  test.js
 
 %files
 %{!?_licensedir:%global license %doc}
@@ -35,5 +35,8 @@ cp -pr package.json index.js %{buildroot}%{nodejs_sitelib}/is-date-object
 %{nodejs_sitelib}/is-date-object
 
 %changelog
+* Thu Mar 01 2022 Yongqing chen <chenyongqingdl@gmail.com> - 1.0.1-2
+- Delete --es-staging option 
+
 * Thu Aug 20 2020 wangxiao <wangxiao65@huawei.com> - 1.0.1-1
 - Package init
